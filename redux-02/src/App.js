@@ -2,9 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import About from './components/About';
 import Hero from './components/Hero';
 import Cart from './components/Cart';
+import PaymentSuccess from './components/PaymentSuccess';
 
 function App() {
   return (
@@ -12,9 +12,8 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' Component={Hero}/>
-        <Route path='/about' Component={About}/>
         <Route path='/cart' Component={Cart}/>
-
+        <Route path='/success' Component={PaymentSuccess}/>
       </Routes>
       </BrowserRouter>
     </div>
