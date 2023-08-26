@@ -12,13 +12,16 @@
 
     .cardmain {
         width: 800px;
-        height: 80%;
+        height: 100%;
         margin: auto;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         flex-wrap: wrap;
         gap: 20px;
+        overflow-y: auto;
+
+
 
         .cardbody {
             background: #83847e;
@@ -30,6 +33,10 @@
             background-repeat: no-repeat;
             background-size: cover;
             position: relative;
+            filter: grayscale(100%);
+            -webkit-filter: grayscale(100%);
+            transition: 300ms ease-in;
+
 
             h2 {
                 position: absolute;
@@ -41,6 +48,73 @@
                 padding: 5px;
             }
 
+            &:hover {
+                filter: grayscale(0%);
+                animation: float 6s ease-in-out infinite;
+                -webkit-filter: grayscale(0%);
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                transition: 300ms ease-out;
+
+                .btnmain {
+                    display: block;
+                    transition: 300ms ease-in;
+                }
+            }
+
+            .btnmain {
+                display: none;
+                width: 80px;
+                position: absolute;
+                right: 0;
+                padding: 5px 10px;
+
+                .oper {
+                    width: 100%;
+                    transition: 300ms ease-out;
+                    display: flex;
+                    justify-content: space-around;
+
+                    button {
+                        cursor: pointer;
+                        border-radius: 50%;
+                        padding: 7px;
+                        border: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 18px;
+
+                        &:nth-child(1) {
+                            background: white;
+                            color: blue !important;
+                        }
+
+                        &:nth-child(2) {
+                            background: white;
+                            color: red !important;
+                        }
+                    }
+                }
+            }
+
         }
+
+    }
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-10px);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
     }
 }

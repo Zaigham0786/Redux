@@ -1,0 +1,127 @@
+.modalwrapper {
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.modalwrapper .modalmain {
+  width: 750px;
+  height: 90%;
+  position: relative;
+}
+.modalwrapper .modalmain button {
+  position: absolute;
+  right: 0;
+  top: 2%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+}
+.modalwrapper .modalmain button:hover {
+  transform: rotateZ(180deg);
+}
+.modalwrapper .modalmain .main {
+  background: rgba(33, 33, 33, 0.9176470588);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.modalwrapper .modalmain .main form,
+.modalwrapper .modalmain .main table {
+  width: 100%;
+  height: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+.modalwrapper .modalmain .main form tr,
+.modalwrapper .modalmain .main table tr {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalwrapper .modalmain .main form tr td,
+.modalwrapper .modalmain .main table tr td {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalwrapper .modalmain .main form tr td input,
+.modalwrapper .modalmain .main table tr td input {
+  color: white;
+  letter-spacing: 2px;
+  width: 300px;
+  height: 40px;
+  font-weight: 300;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #dadada;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.052);
+  font-size: 16px;
+  padding: 0px 10px;
+}
+.modalwrapper .modalmain .main form tr td input:focus,
+.modalwrapper .modalmain .main table tr td input:focus {
+  box-shadow: 0 0 1.5pt 1pt #D3D3D3;
+  outline-width: 0px;
+}
+.modalwrapper .modalmain .main form tr td textarea,
+.modalwrapper .modalmain .main table tr td textarea {
+  font-size: 16px;
+  padding: 5px 10px;
+  font-weight: 300;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid #dadada;
+  outline: none;
+  letter-spacing: 2px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.052);
+}
+.modalwrapper .modalmain .main form tr td textarea:focus,
+.modalwrapper .modalmain .main table tr td textarea:focus {
+  box-shadow: 0 0 1.5pt 1pt #D3D3D3;
+  outline-width: 0px;
+}
+.modalwrapper .modalmain .main form tr .submitbtn,
+.modalwrapper .modalmain .main table tr .submitbtn {
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 0px 30px;
+}
+.modalwrapper .modalmain .main form tr .submitbtn input,
+.modalwrapper .modalmain .main table tr .submitbtn input {
+  background: transparent;
+  color: white;
+  font-weight: 400 !important;
+  border: 1px solid #dadada;
+  cursor: pointer;
+  width: 100px;
+  font-weight: bold;
+}/*# sourceMappingURL=modal.css.map */
