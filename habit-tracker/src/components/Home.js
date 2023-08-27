@@ -10,13 +10,20 @@ import { BsFillTrashFill } from "react-icons/bs"
 import { removeItemFromList , editItem} from './ItemSlice';
 const Home = () => {
     const [state, setstate] = useState(false)
+    const [selectedItem, setSelectedItem] = useState(null);
     const cartItems = useSelector(selectItems);
     const dispatch = useDispatch()
     const deleteHandler = (id) => {
         dispatch(removeItemFromList(id))
     }
-    const editHandler = (id) => {
+    const editHandler = (data) => {
+        setSelectedItem(data);
         setstate(true)
+    }
+
+    const closeModal = () => {
+        setSelectedItem(null);
+        setstate(false);
     }
     return (
         <div className='mainwrapper'>
@@ -28,7 +35,7 @@ const Home = () => {
                     return (
                         <div key={data.id} className="cardbody" style={{ backgroundImage: `url(${data.img})` }}>
                             <div className="btnmain"> <div className="oper">
-                                <button style={{ border: `1px solid ${data.border}` }} onClick={() => editHandler(data.id)}><FaRegEdit /></button>
+                                <button style={{ border: `1px solid ${data.border}` }} onClick={() => editHandler(data)}><FaRegEdit /></button>
                                 <button style={{ border: `1px solid ${data.border}` }} onClick={() => deleteHandler(data.id)}><BsFillTrashFill /></button>
                             </div></div>
                             <h2 style={{ color: `${data.color}`, borderBottom: `1px solid ${data.border}` }}>{data.title}</h2>
@@ -36,7 +43,7 @@ const Home = () => {
                     )
                 })}
             </div>
-            {state && <Modal close={setstate} />}
+            {state && <Modal close={closeModal} editedItem={selectedItem} />}
         </div>
     );
 }

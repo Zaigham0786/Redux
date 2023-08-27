@@ -50,25 +50,26 @@
   padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
   flex-direction: column;
+  gap: 20px;
   align-items: center;
 }
 .modalwrapper .modalmain .main form tr,
 .modalwrapper .modalmain .main table tr {
-  height: 50px;
-  width: 100%;
+  height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  width: 700px;
 }
 .modalwrapper .modalmain .main form tr td,
 .modalwrapper .modalmain .main table tr td {
-  width: 49%;
+  width: 300px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .modalwrapper .modalmain .main form tr td input,
 .modalwrapper .modalmain .main table tr td input {
@@ -90,24 +91,6 @@
   box-shadow: 0 0 1.5pt 1pt #D3D3D3;
   outline-width: 0px;
 }
-.modalwrapper .modalmain .main form tr td textarea,
-.modalwrapper .modalmain .main table tr td textarea {
-  font-size: 16px;
-  padding: 5px 10px;
-  font-weight: 300;
-  border-radius: 5px;
-  border: none;
-  border-bottom: 1px solid #dadada;
-  outline: none;
-  letter-spacing: 2px;
-  color: white;
-  background-color: rgba(255, 255, 255, 0.052);
-}
-.modalwrapper .modalmain .main form tr td textarea:focus,
-.modalwrapper .modalmain .main table tr td textarea:focus {
-  box-shadow: 0 0 1.5pt 1pt #D3D3D3;
-  outline-width: 0px;
-}
 .modalwrapper .modalmain .main form tr .submitbtn,
 .modalwrapper .modalmain .main table tr .submitbtn {
   width: 100%;
@@ -124,4 +107,24 @@
   cursor: pointer;
   width: 100px;
   font-weight: bold;
+}
+
+@media only screen and (max-width: 730px) {
+  .modalwrapper .modalmain {
+    width: 100%;
+    height: 100vh;
+  }
+  .modalwrapper .modalmain .main form tr, .modalwrapper .modalmain .main table tr {
+    flex-direction: column;
+    gap: 20px 0px;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .modalwrapper .modalmain .main form tr .submitbtn, .modalwrapper .modalmain .main table tr .submitbtn {
+    justify-content: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
 }/*# sourceMappingURL=modal.css.map */

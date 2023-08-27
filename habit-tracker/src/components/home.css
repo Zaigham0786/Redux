@@ -39,6 +39,7 @@
   font-weight: bold;
   font-size: 28px;
   padding: 5px;
+  text-transform: capitalize;
 }
 .mainwrapper .cardmain .cardbody:hover {
   filter: grayscale(0%);
